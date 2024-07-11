@@ -1,6 +1,7 @@
 import React from "react";
 import { Formik } from "formik";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -26,9 +27,18 @@ const Login = () => {
         onSubmit={(values, { setSubmitting }) => {
           if (values.email === "admin123@gmail.com" && values.password === "123456") {
             localStorage.setItem("isAuthenticated", "true");
+            toast('🦄 login Successfully!', {
+              type:"success",
+              position: "top-right",
+              autoClose: 5000,
+              });
             navigate("/dashboard");
           } else {
-            alert("Invalid user or password");
+            toast('🦄 Invalid user or Password!', {
+              type:"error",
+              position: "top-right",
+              autoClose: 5000,
+              });
           }
           setSubmitting(false);
         }}

@@ -4,7 +4,7 @@ const ContactForm = () => {
   return (
     <>
       <Formik
-        initialValues={{ email: "", name: "" ,email:"",subject:"" }}
+        initialValues={{ email: "", name: "",subject:"" }}
         validate={(values) => {
           const errors = {};
           if (!values.email) {

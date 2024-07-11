@@ -237,7 +237,8 @@ width: 50%;
     padding: 30px;
 }
 .form-field{
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    position: relative;
 }
 input[type="text"],textarea{
     width: 100%;

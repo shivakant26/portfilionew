@@ -311,6 +311,12 @@ footer{
     font-size: 13px;
     color: red;
 }
+.loader-wr{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
 /* responsive desing */
 @media only screen and (max-width:1199px) {
     .center_wr{

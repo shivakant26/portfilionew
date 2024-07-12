@@ -12,6 +12,44 @@ import {
     FaChalkboardTeacher,
     FaDev
   } from "react-icons/fa";
+export const MenuItem = [
+{
+    label:"Home",
+    url:""
+},
+{
+    label:"About",
+    url:""
+},
+{
+    label:"Resume",
+    url:""
+},
+{
+    label:"Services",
+    url:""
+},
+{
+    label:"Skill",
+    url:""
+},
+{
+    label:"Project",
+    url:""
+},
+{
+    label:"MyBlog",
+    url:""
+},
+{
+    label:"Contact",
+    url:""
+},
+{
+    label:"Login",
+    url:"/login"
+},
+]  
 export const LinksMenu = [
     {
         labelName:"Home",
@@ -60,4 +98,38 @@ export const serviceMenu = [
         url:"",
         icon:FaHtml5
     },
+]
+
+export const ExpCardData = [
+    {
+        session:"2014-2016",
+        collage:"Jabalpur Engneering Collage",
+        title:"Master of Computer Application"
+    },
+    {
+        session:"2014-2016",
+        collage:"Jabalpur Engneering Collage",
+        title:"Master of Computer Application"
+    },
+    {
+        session:"2014-2016",
+        collage:"Jabalpur Engneering Collage",
+        title:"Master of Computer Application"
+    },
+    {
+        session:"2014-2016",
+        collage:"Jabalpur Engneering Collage",
+        title:"Master of Computer Application"
+    },
+    {
+        session:"2014-2016",
+        collage:"Jabalpur Engneering Collage",
+        title:"Master of Computer Application"
+    },
+    {
+        session:"2014-2016",
+        collage:"Jabalpur Engneering Collage",
+        title:"Master of Computer Application"
+    }
+
 ]

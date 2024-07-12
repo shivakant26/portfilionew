@@ -6,23 +6,23 @@ import {
   FaArrowRight,
   FaMapSigns,
   FaPaperPlane,
-  FaGlobeAfrica,   
+  FaGlobeAfrica,
   FaReact,
   FaAngular,
   FaHtml5,
   FaChalkboardTeacher,
-  FaDev
+  FaDev,
 } from "react-icons/fa";
 import { FaLocationDot, FaPhone } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import ContactForm from "../component/ContentForm";
 import ServiceCard from "../component/ServiceCard";
-import { serviceMenu } from "../utils/utils";
+import { ExpCardData, serviceMenu } from "../utils/utils";
 import ContactImage from "../assets/images/contact-image.jpg";
-const HomePage = () =>{
-  
-    return(
-        <>
+import ExperienceCard from "../component/ExperienceCard";
+const HomePage = () => {
+  return (
+    <>
       <section className="banner">
         <div className="center_wr">
           <div className="banner_inner">
@@ -101,46 +101,9 @@ const HomePage = () =>{
             roasted parts of sentences fly into your mouth
           </p>
           <div className="card-container">
-            <div className="card">
-              <h3>2014-2016</h3>
-              <h4>Master of Computer Application</h4>
-              <p>Jabalpur Engneering collage Jabalpur</p>
-            </div>
-            <div className="card">
-              <h3>2014-2016</h3>
-              <h4>Master of Computer Application</h4>
-              <p>Jabalpur Engneering collage Jabalpur</p>
-            </div>
-            <div className="card">
-              <h3>2014-2016</h3>
-              <h4>Master of Computer Application</h4>
-              <p>Jabalpur Engneering collage Jabalpur</p>
-            </div>
-            <div className="card">
-              <h3>2014-2016</h3>
-              <h4>Master of Computer Application</h4>
-              <p>Jabalpur Engneering collage Jabalpur</p>
-            </div>
-            <div className="card">
-              <h3>2014-2016</h3>
-              <h4>Master of Computer Application</h4>
-              <p>Jabalpur Engneering collage Jabalpur</p>
-            </div>
-            <div className="card">
-              <h3>2014-2016</h3>
-              <h4>Master of Computer Application</h4>
-              <p>Jabalpur Engneering collage Jabalpur</p>
-            </div>
-            <div className="card">
-              <h3>2014-2016</h3>
-              <h4>Master of Computer Application</h4>
-              <p>Jabalpur Engneering collage Jabalpur</p>
-            </div>
-            <div className="card">
-              <h3>2014-2016</h3>
-              <h4>Master of Computer Application</h4>
-              <p>Jabalpur Engneering collage Jabalpur</p>
-            </div>
+            {ExpCardData?.map((item, index) => {
+              return <ExperienceCard data={item} key={index} />;
+            })}
           </div>
         </div>
       </section>
@@ -154,14 +117,10 @@ const HomePage = () =>{
             roasted parts of sentences fly into your mouth
           </p>
           <div className="card-container">
-            {
-              serviceMenu?.map((item,index)=>{
-                const Icons = item.icon;
-                return(
-                  <ServiceCard  item={item} index={index} Icons={Icons}/>
-                )
-              })
-            }
+            {serviceMenu?.map((item, index) => {
+              const Icons = item.icon;
+              return <ServiceCard item={item} index={index} Icons={Icons} />;
+            })}
           </div>
         </div>
       </section>
@@ -176,22 +135,30 @@ const HomePage = () =>{
           <div className="contacts">
             <div className="card-container">
               <div className="contact-card">
-                <span><FaMapSigns/></span>
+                <span>
+                  <FaMapSigns />
+                </span>
                 <h5>Address</h5>
                 <p>sirmour Rewa (m.p.)</p>
               </div>
               <div className="contact-card">
-                <span><FaPhone/></span>
+                <span>
+                  <FaPhone />
+                </span>
                 <h5>CONTACT NUMBER</h5>
                 <p>7693882898</p>
               </div>
               <div className="contact-card">
-                <span><FaPaperPlane /></span>
+                <span>
+                  <FaPaperPlane />
+                </span>
                 <h5>EMAIL ADDRESS</h5>
                 <p>shivakanttiwari123@gmail.com</p>
               </div>
               <div className="contact-card">
-                <span><FaGlobeAfrica /></span>
+                <span>
+                  <FaGlobeAfrica />
+                </span>
                 <h5>WEBSITE</h5>
                 <p>currently not Available</p>
               </div>
@@ -199,18 +166,17 @@ const HomePage = () =>{
           </div>
           <div className="contact-info">
             <div className="contact-img">
-              <img src={ContactImage} alt="contact-img"/>
+              <img src={ContactImage} alt="contact-img" />
             </div>
             <div className="contact-form">
-            <ContactForm />
+              <ContactForm />
             </div>
           </div>
         </div>
       </section>
       {/* end contact section */}
-      
-        </>
-    )
-}
+    </>
+  );
+};
 
 export default HomePage;

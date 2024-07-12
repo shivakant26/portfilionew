@@ -1,5 +1,6 @@
-import { Link as ScrollLink } from 'react-scroll';
-import {Link} from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
+import { Link } from "react-router-dom";
+import { MenuItem } from "../utils/utils";
 const Header = () => {
   return (
     <>
@@ -11,34 +12,23 @@ const Header = () => {
             </div>
             <div className="menu">
               <ul>
-                <li>
-                  <Link to="/">Home</Link>
-                </li>
-                <li>
-                  <Link to="">About</Link>
-                </li>
-                <li>
-                  <Link to="">Resume</Link>
-                </li>
-                <li>
-                  <Link to="">Services</Link>
-                </li>
-                <li>
-                  <Link to="">skills</Link>
-                </li>
-                <li>
-                  <Link to="">Project</Link>
-                </li>
-                <li>
-                  <Link to="">MyBlog</Link>
-                </li>
-                <li>
-                  <Link to="">contact</Link>
-                </li>
-                <li>
-                  <Link to="/login">login</Link>
-                </li>
+                {MenuItem.map((menu,index) => {
+                  return (
+                    <li key={index}>
+                      <Link to={menu.url}>{menu.label}</Link>
+                    </li>
+                  );
+                })}
               </ul>
+            </div>
+            <div className="mobile-menu">
+            {MenuItem.map((menu,index) => {
+                  return (
+                    <li key={index}>
+                      <Link to={menu.url}>{menu.label}</Link>
+                    </li>
+                  );
+                })}
             </div>
           </div>
         </div>
